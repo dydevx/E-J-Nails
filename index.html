@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E &amp; J Nails | Nail Studio</title>
+    <meta
+      name="description"
+      content="E & J Nails is a modern nail studio for acrylic, gel, BIAB, SNS, pedicure and nail design services."
+    />
+    <meta name="theme-color" content="#f7d4dc" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header" data-header>
+      <a class="brand" href="#home" aria-label="E & J Nails home">
+        <img src="logo.jpg" alt="E & J Nails logo" />
+      </a>
+
+      <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#about">About us</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <a class="header-cta" href="#booking">Book now</a>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="hero-bg" aria-hidden="true">
+          <span class="hero-silk"></span>
+          <span class="paint paint-one"></span>
+          <span class="paint paint-two"></span>
+        </div>
+        <div class="hero-stage reveal">
+          <figure class="hero-portrait">
+            <img src="1.jpg" alt="E & J Nails manicure" />
+          </figure>
+          <div class="hero-logo-mark">
+            <img src="logo.jpg" alt="E & J Nails logo" />
+          </div>
+          <a class="btn hero-consult" href="#booking">Book now</a>
+        </div>
+      </section>
+
+      <section class="section about-section" id="about">
+        <div class="section-copy">
+          <h2>About us</h2>
+          <p>
+            E &amp; J Nails is a modern nail studio dedicated to precise shaping,
+            polished finishes and a calm beauty experience. Our technicians work with
+            carefully selected products and a clean process to create nails that feel
+            elegant, durable and personal to your style.
+          </p>
+          <p>
+            From soft everyday colours to French tips, ombre, BIAB, SNS and detailed
+            nail art, every appointment is handled with focused care so your hands and
+            feet leave looking refined and fresh.
+          </p>
+          <a class="text-link" href="#booking">Request an appointment</a>
+        </div>
+
+        <div class="about-carousel" data-about-carousel>
+          <div class="about-slider">
+            <button class="slider-btn prev" type="button" aria-label="Previous image" data-carousel-prev>‹</button>
+            <img class="about-slide-main" src="2.jpg" alt="E & J Nails featured design" data-carousel-main />
+            <button class="slider-btn next" type="button" aria-label="Next image" data-carousel-next>›</button>
+          </div>
+          <div class="about-thumbs" aria-label="About gallery thumbnails">
+            <button class="thumb active" type="button" data-carousel-thumb="0" aria-label="Show image 1">
+              <img src="2.jpg" alt="" />
+            </button>
+            <button class="thumb" type="button" data-carousel-thumb="1" aria-label="Show image 2">
+              <img src="3.jpg" alt="" />
+            </button>
+            <button class="thumb" type="button" data-carousel-thumb="2" aria-label="Show image 3">
+              <img src="4.jpg" alt="" />
+            </button>
+            <button class="thumb" type="button" data-carousel-thumb="3" aria-label="Show image 4">
+              <img src="5.jpg" alt="" />
+            </button>
+            <button class="thumb" type="button" data-carousel-thumb="4" aria-label="Show image 5">
+              <img src="6.jpg" alt="" />
+            </button>
+            <button class="thumb" type="button" data-carousel-thumb="5" aria-label="Show image 6">
+              <img src="7.jpg" alt="" />
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="section services-section" id="services">
+        <div class="section-title centered reveal">
+          <p class="kicker">Our services</p>
+          <h2>Price list</h2>
+        </div>
+
+        <div class="price-layout">
+          <article class="price-card large reveal">
+            <h3>Nail Extension</h3>
+            <table>
+              <thead>
+                <tr>
+                  <th>Service</th>
+                  <th>Full set</th>
+                  <th>Infill</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Acrylic with Gel</td>
+                  <td>&pound;35</td>
+                  <td>&pound;28</td>
+                </tr>
+                <tr>
+                  <td>Ombre</td>
+                  <td>&pound;38</td>
+                  <td>&pound;33</td>
+                </tr>
+                <tr>
+                  <td>Toes Extension with Gel</td>
+                  <td>&pound;40</td>
+                  <td>&pound;32</td>
+                </tr>
+                <tr>
+                  <td>SNS Dipping Powder</td>
+                  <td>&pound;40</td>
+                  <td>&pound;35</td>
+                </tr>
+              </tbody>
+            </table>
+          </article>
+
+          <figure class="price-media price-media-soft reveal">
+            <img src="12.jpg" alt="E & J Nails manicure style" />
+          </figure>
+
+          <article class="price-card reveal">
+            <h3>Polish / Gel</h3>
+            <ul class="price-list">
+              <li><span>Gel on Hand</span><strong>&pound;20</strong></li>
+              <li><span>Gel on Toes</span><strong>&pound;23</strong></li>
+              <li><span>Pedicure Only</span><strong>&pound;28</strong></li>
+              <li><span>Pedicure with Gel</span><strong>&pound;38</strong></li>
+            </ul>
+          </article>
+
+          <figure class="price-media reveal">
+            <img src="13.jpg" alt="E & J Nails nail art" />
+          </figure>
+
+          <article class="price-card reveal">
+            <h3>BIAB</h3>
+            <ul class="price-list">
+              <li><span>BIAB on natural nail</span><strong>&pound;30</strong></li>
+              <li><span>BIAB Extension</span><strong>&pound;40</strong></li>
+              <li><span>BIAB Infill</span><strong>&pound;30</strong></li>
+            </ul>
+          </article>
+
+          <article class="price-card reveal">
+            <h3>Add On Services</h3>
+            <ul class="price-list">
+              <li><span>French Tip / Colour Tip</span><strong>&pound;5</strong></li>
+              <li><span>Take off with new set</span><strong>+&pound;3</strong></li>
+              <li><span>Eyebrow Waxing</span><strong>&pound;7</strong></li>
+              <li><span>Eyebrow Tinting</span><strong>&pound;7</strong></li>
+              <li><span>Upper lip</span><strong>&pound;4</strong></li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section gallery-section" id="gallery" aria-label="Gallery">
+        <div class="section-title reveal">
+          <p class="kicker">Gallery</p>
+          <h2>Recent styles</h2>
+        </div>
+        <div class="gallery-grid">
+          <img class="reveal" src="4.jpg" alt="Nail design sample" />
+          <img class="reveal" src="5.jpg" alt="Nail design sample" />
+          <img class="reveal" src="6.jpg" alt="Nail design sample" />
+          <img class="reveal" src="7.jpg" alt="Nail design sample" />
+          <img class="reveal" src="8.jpg" alt="Nail design sample" />
+          <img class="reveal" src="9.jpg" alt="Nail design sample" />
+          <img class="reveal" src="10.jpg" alt="Nail design sample" />
+          <img class="reveal" src="11.jpg" alt="Nail design sample" />
+        </div>
+      </section>
+
+      <section class="section booking-section" id="booking">
+        <div class="booking-copy reveal">
+          <p class="kicker">Consultation</p>
+          <h2>Book your nail appointment</h2>
+          <p>Send your preferred service, date and design idea. The form is ready for connection to your booking workflow.</p>
+        </div>
+
+        <form class="booking-form reveal" data-booking-form>
+          <label>
+            Name
+            <input type="text" name="name" autocomplete="name" required />
+          </label>
+          <label>
+            Phone
+            <input type="tel" name="phone" autocomplete="tel" required />
+          </label>
+          <label>
+            Service
+            <select name="service" required>
+              <option value="">Choose service</option>
+              <option>Nail Extension</option>
+              <option>Infill</option>
+              <option>Gel Polish</option>
+              <option>Pedicure</option>
+              <option>BIAB</option>
+              <option>SNS Dipping Powder</option>
+              <option>Eyebrow</option>
+            </select>
+          </label>
+          <label>
+            Preferred date
+            <input type="date" name="date" required />
+          </label>
+          <label class="full">
+            Message
+            <textarea name="message" rows="4" placeholder="Colour, design or appointment note"></textarea>
+          </label>
+          <button class="btn btn-dark full" type="submit">Send request</button>
+          <p class="form-status full" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+
+      <section class="section contact-section" id="contact">
+        <div class="contact-panel reveal">
+          <div>
+            <p class="kicker">Contact</p>
+            <h2>E &amp; J Nails</h2>
+            <ul>
+              <li>
+                <span>Address</span>
+                <strong>E &amp; J Nails</strong>
+              </li>
+              <li>
+                <span>Opening hours</span>
+                <strong>Monday - Saturday by appointment</strong>
+              </li>
+            </ul>
+          </div>
+          <div class="map-wrap" aria-label="E & J Nails map">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2384.1378707926233!2d-1.1260614230345272!3d53.304977077817696!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4879a17da73926bf%3A0x7ff17494e3961242!2sE%20%26%20J%20Nails!5e0!3m2!1svi!2s!4v1781277039518!5m2!1svi!2s"
+              width="600"
+              height="450"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="brand footer-brand" href="#home" aria-label="E & J Nails home">
+        <img src="logo.jpg" alt="E & J Nails logo" />
+      </a>
+      <nav aria-label="Footer navigation">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <p>
+        &copy; 2026 All Rights Reserved<br />
+        Designed by Hoangcaster
+      </p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
