@@ -296,14 +296,14 @@ textarea {
 
 .hero-portrait {
   position: absolute;
-  top: 0;
-  left: 34px;
-  width: 348px;
-  height: 540px;
+  top: 10px;
+  left: 24px;
+  width: 360px;
+  height: 520px;
   margin: 0;
   overflow: hidden;
   border: 1px solid rgba(61, 115, 173, 0.82);
-  border-radius: 44px;
+  border-radius: 40px;
   background: #080808;
   box-shadow: 0 18px 46px rgba(0, 0, 0, 0.48);
 }
@@ -311,8 +311,8 @@ textarea {
 .hero-portrait img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
-  object-position: center;
+  object-fit: cover;
+  object-position: center 46%;
 }
 
 .hero-logo-mark {
@@ -681,14 +681,24 @@ td:not(:first-child) {
 
 .gallery-grid img {
   width: 100%;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 3 / 4;
   height: auto;
-  object-fit: contain;
+  object-fit: cover;
   object-position: center;
   border-radius: var(--radius);
   border: 1px solid rgba(255, 255, 255, 0.12);
   background: #0c0b0b;
   box-shadow: var(--shadow);
+}
+
+.gallery-grid img:nth-child(3),
+.gallery-grid img:nth-child(5) {
+  object-position: center 58%;
+}
+
+.gallery-grid img:nth-child(7),
+.gallery-grid img:nth-child(8) {
+  object-position: center top;
 }
 
 .gallery-grid img:nth-child(4n + 2),
@@ -1020,15 +1030,16 @@ textarea {
   }
 
   .hero-portrait {
+    top: 0;
     left: 50%;
-    width: min(300px, 78vw);
-    height: 430px;
+    width: min(306px, 78vw);
+    height: min(442px, 113vw);
     border-radius: 34px;
     transform: translateX(-50%);
   }
 
   .hero-logo-mark {
-    top: 388px;
+    top: 404px;
     left: 50%;
     width: 154px;
     height: 154px;
@@ -1041,7 +1052,7 @@ textarea {
   }
 
   .hero-consult {
-    top: 560px;
+    top: 574px;
     left: 50%;
     min-width: 210px;
     transform: translateX(-50%);
