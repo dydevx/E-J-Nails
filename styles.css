@@ -668,6 +668,13 @@ td:not(:first-child) {
   font-weight: 800;
 }
 
+.service-note {
+  margin: 18px 0 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
 .gallery-section {
   background: #100f0f;
 }
@@ -746,6 +753,21 @@ textarea {
   background: rgba(0, 0, 0, 0.28);
   outline: 0;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+select {
+  font-weight: 800;
+}
+
+select option {
+  color: #fff;
+  background: #171313;
+  font-weight: 700;
+}
+
+select option:checked {
+  color: #080808;
+  background: var(--orange);
 }
 
 input:focus,
