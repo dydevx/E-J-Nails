@@ -37,12 +37,12 @@ bookingForm?.addEventListener("submit", (event) => {
 
 if (aboutCarousel) {
   const slides = [
-    { src: "2.jpg", alt: "Soft nude nail design", position: "center 48%" },
-    { src: "3.jpg", alt: "Glossy manicure design", position: "center 42%" },
     { src: "4.jpg", alt: "Detailed nail art design", position: "center 46%" },
-    { src: "5.jpg", alt: "Elegant nail finish", position: "center 50%" },
-    { src: "6.jpg", alt: "Neutral pedicure style", position: "center 58%" },
-    { src: "7.jpg", alt: "Soft pedicure nail style", position: "center 58%" },
+    { src: "8.jpg", alt: "Glossy manicure design", position: "center 42%" },
+    { src: "9.jpg", alt: "Elegant nail finish", position: "center 50%" },
+    { src: "10.jpg", alt: "Neutral pedicure style", position: "center 58%" },
+    { src: "11.jpg", alt: "Soft pedicure nail style", position: "center 58%" },
+    { src: "21.jpg", alt: "Fresh nail design", position: "center 50%" },
   ];
   const mainImage = aboutCarousel.querySelector("[data-carousel-main]");
   const thumbs = [...aboutCarousel.querySelectorAll("[data-carousel-thumb]")];
