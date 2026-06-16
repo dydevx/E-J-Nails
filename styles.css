@@ -838,6 +838,33 @@ textarea {
   font-size: clamp(1rem, 2vw, 1.35rem);
 }
 
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.social-links a,
+.footer-social a {
+  display: inline-flex;
+  min-height: 36px;
+  align-items: center;
+  justify-content: center;
+  padding: 7px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 5px;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.07);
+  transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+}
+
+.social-links a:hover,
+.footer-social a:hover {
+  border-color: var(--orange);
+  background: rgba(243, 160, 82, 0.14);
+  transform: translateY(-2px);
+}
+
 .map-wrap {
   min-height: 420px;
   overflow: hidden;
@@ -877,6 +904,12 @@ textarea {
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+}
+
+.site-footer .footer-social {
+  gap: 10px;
+  letter-spacing: 0;
+  text-transform: none;
 }
 
 .site-footer p {
