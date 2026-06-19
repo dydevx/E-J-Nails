@@ -60,7 +60,7 @@ textarea {
   inset: 0 0 auto;
   z-index: 50;
   display: grid;
-  grid-template-columns: 220px 1fr auto;
+  grid-template-columns: 170px 1fr auto;
   align-items: center;
   gap: 32px;
   min-height: 72px;
@@ -80,8 +80,8 @@ textarea {
   align-items: center;
 }
 
-.brand img {
-  width: 146px;
+.site-header .brand img {
+  width: 42px;
   height: 42px;
   border-radius: 0;
   object-fit: contain;
@@ -90,7 +90,7 @@ textarea {
 }
 
 .site-header.scrolled .brand img {
-  width: 146px;
+  width: 42px;
   height: 42px;
 }
 
@@ -1050,8 +1050,8 @@ textarea {
 }
 
 @media (max-width: 720px) {
-  .brand img {
-    width: 124px;
+  .site-header .brand img {
+    width: 36px;
     height: 36px;
   }
 
