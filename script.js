@@ -2,8 +2,56 @@ const header = document.querySelector("[data-header]");
 const navToggle = document.querySelector(".nav-toggle");
 const nav = document.querySelector(".main-nav");
 const bookingForm = document.querySelector("[data-booking-form]");
+const bookingLinks = document.querySelectorAll("[data-booking-link]");
+const bookingModal = document.querySelector("[data-booking-modal]");
+const bookingGmailLink = document.querySelector("[data-booking-gmail]");
+const bookingCloseButtons = document.querySelectorAll("[data-booking-close]");
+const copyEmailButton = document.querySelector("[data-copy-email]");
+const copyStatus = document.querySelector("[data-copy-status]");
 const revealItems = document.querySelectorAll(".reveal");
 const aboutCarousel = document.querySelector("[data-about-carousel]");
+const bookingEmail = "Uyenle.westlife@gmail.com";
+const gmailComposeUrl = "https://mail.google.com/mail/";
+let lastFocusedElement;
+
+const createGmailUrl = (body = "") => {
+  const params = new URLSearchParams({
+    view: "cm",
+    fs: "1",
+    to: bookingEmail,
+    su: "Booking request for E & J Nails",
+  });
+
+  if (body) {
+    params.set("body", body);
+  }
+
+  return `${gmailComposeUrl}?${params.toString()}`;
+};
+
+const openBookingModal = (gmailUrl = createGmailUrl()) => {
+  if (!bookingModal || !bookingGmailLink) {
+    window.open(gmailUrl, "_blank", "noopener,noreferrer");
+    return;
+  }
+
+  lastFocusedElement = document.activeElement;
+  bookingGmailLink.href = gmailUrl;
+  bookingModal.hidden = false;
+  document.body.classList.add("modal-open");
+  if (copyStatus) {
+    copyStatus.textContent = "";
+  }
+  bookingGmailLink.focus();
+};
+
+const closeBookingModal = () => {
+  if (!bookingModal) return;
+
+  bookingModal.hidden = true;
+  document.body.classList.remove("modal-open");
+  lastFocusedElement?.focus?.();
+};
 
 const updateHeader = () => {
   header?.classList.toggle("scrolled", window.scrollY > 12);
@@ -28,10 +76,50 @@ nav?.addEventListener("click", (event) => {
   }
 });
 
+bookingLinks.forEach((link) => {
+  link.addEventListener("click", (event) => {
+    event.preventDefault();
+    openBookingModal(link.href);
+  });
+});
+
+bookingCloseButtons.forEach((button) => {
+  button.addEventListener("click", closeBookingModal);
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && !bookingModal?.hidden) {
+    closeBookingModal();
+  }
+});
+
+copyEmailButton?.addEventListener("click", async () => {
+  try {
+    await navigator.clipboard.writeText(bookingEmail);
+    if (copyStatus) {
+      copyStatus.textContent = "Email copied.";
+    }
+  } catch {
+    if (copyStatus) {
+      copyStatus.textContent = bookingEmail;
+    }
+  }
+});
+
 bookingForm?.addEventListener("submit", (event) => {
   event.preventDefault();
   const status = bookingForm.querySelector(".form-status");
-  status.textContent = "Thank you. Your request is ready to be connected to the booking system.";
+  const formData = new FormData(bookingForm);
+  const body = [
+    `Name: ${formData.get("name")}`,
+    `Phone: ${formData.get("phone")}`,
+    `Service: ${formData.get("service")}`,
+    `Preferred date: ${formData.get("date")}`,
+    `Message: ${formData.get("message") || ""}`,
+  ].join("\n");
+
+  openBookingModal(createGmailUrl(body));
+  status.textContent = "Tap Open Gmail in the popup to send your booking request.";
   bookingForm.reset();
 });
 

@@ -36,7 +36,7 @@
         <a href="#contact">Contact</a>
       </nav>
 
-      <a class="header-cta" href="#booking">Book now</a>
+      <a class="header-cta" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=Uyenle.westlife@gmail.com&amp;su=Booking%20request%20for%20E%20%26%20J%20Nails" target="_blank" rel="noopener noreferrer" data-booking-link>Book now</a>
     </header>
 
     <main>
@@ -53,7 +53,7 @@
           <div class="hero-logo-mark">
             <img src="logo.jpg" alt="E & J Nails logo" />
           </div>
-          <a class="btn hero-consult" href="#booking">Book now</a>
+          <a class="btn hero-consult" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=Uyenle.westlife@gmail.com&amp;su=Booking%20request%20for%20E%20%26%20J%20Nails" target="_blank" rel="noopener noreferrer" data-booking-link>Book now</a>
         </div>
       </section>
 
@@ -71,7 +71,7 @@
             nail art, every appointment is handled with focused care so your hands and
             feet leave looking refined and fresh.
           </p>
-          <a class="text-link" href="#booking">Request an appointment</a>
+          <a class="text-link" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=Uyenle.westlife@gmail.com&amp;su=Booking%20request%20for%20E%20%26%20J%20Nails" target="_blank" rel="noopener noreferrer" data-booking-link>Request an appointment</a>
         </div>
 
         <div class="about-carousel" data-about-carousel>
@@ -345,6 +345,23 @@
         Designed by Hoangcaster
       </p>
     </footer>
+
+    <div class="booking-modal" data-booking-modal hidden>
+      <div class="booking-modal__backdrop" data-booking-close></div>
+      <div class="booking-modal__panel" role="dialog" aria-modal="true" aria-labelledby="booking-modal-title">
+        <button class="booking-modal__close" type="button" aria-label="Close booking popup" data-booking-close>&times;</button>
+        <p class="kicker">Booking request</p>
+        <h2 id="booking-modal-title">Open Gmail to book</h2>
+        <p>
+          Gmail will open with our email address ready. If it does not open on your phone,
+          copy the email below and send your request manually.
+        </p>
+        <a class="btn btn-dark booking-modal__gmail" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=Uyenle.westlife@gmail.com&amp;su=Booking%20request%20for%20E%20%26%20J%20Nails" target="_blank" rel="noopener noreferrer" data-booking-gmail>Open Gmail</a>
+        <button class="booking-modal__copy" type="button" data-copy-email>Copy email</button>
+        <p class="booking-modal__email">Uyenle.westlife@gmail.com</p>
+        <p class="booking-modal__status" role="status" aria-live="polite" data-copy-status></p>
+      </div>
+    </div>
 
     <script src="script.js"></script>
   </body>
