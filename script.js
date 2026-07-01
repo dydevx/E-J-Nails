@@ -4,45 +4,38 @@ const nav = document.querySelector(".main-nav");
 const bookingForm = document.querySelector("[data-booking-form]");
 const bookingLinks = document.querySelectorAll("[data-booking-link]");
 const bookingModal = document.querySelector("[data-booking-modal]");
-const bookingGmailLink = document.querySelector("[data-booking-gmail]");
+const bookingWhatsAppLink = document.querySelector("[data-booking-whatsapp]");
 const bookingCloseButtons = document.querySelectorAll("[data-booking-close]");
-const copyEmailButton = document.querySelector("[data-copy-email]");
+const copyPhoneButton = document.querySelector("[data-copy-phone]");
 const copyStatus = document.querySelector("[data-copy-status]");
 const revealItems = document.querySelectorAll(".reveal");
 const aboutCarousel = document.querySelector("[data-about-carousel]");
-const bookingEmail = "Uyenle.westlife@gmail.com";
-const gmailComposeUrl = "https://mail.google.com/mail/";
+const bookingPhone = "+44 7832 699678";
+const whatsAppBookingUrl = "https://wa.me/447832699678";
 let lastFocusedElement;
 
-const createGmailUrl = (body = "") => {
+const createWhatsAppUrl = (message = "Hello E & J Nails, I'd like to book an appointment.") => {
   const params = new URLSearchParams({
-    view: "cm",
-    fs: "1",
-    to: bookingEmail,
-    su: "Booking request for E & J Nails",
+    text: message,
   });
 
-  if (body) {
-    params.set("body", body);
-  }
-
-  return `${gmailComposeUrl}?${params.toString()}`;
+  return `${whatsAppBookingUrl}?${params.toString()}`;
 };
 
-const openBookingModal = (gmailUrl = createGmailUrl()) => {
-  if (!bookingModal || !bookingGmailLink) {
-    window.open(gmailUrl, "_blank", "noopener,noreferrer");
+const openBookingModal = (whatsAppUrl = createWhatsAppUrl()) => {
+  if (!bookingModal || !bookingWhatsAppLink) {
+    window.open(whatsAppUrl, "_blank", "noopener,noreferrer");
     return;
   }
 
   lastFocusedElement = document.activeElement;
-  bookingGmailLink.href = gmailUrl;
+  bookingWhatsAppLink.href = whatsAppUrl;
   bookingModal.hidden = false;
   document.body.classList.add("modal-open");
   if (copyStatus) {
     copyStatus.textContent = "";
   }
-  bookingGmailLink.focus();
+  bookingWhatsAppLink.focus();
 };
 
 const closeBookingModal = () => {
@@ -93,15 +86,15 @@ document.addEventListener("keydown", (event) => {
   }
 });
 
-copyEmailButton?.addEventListener("click", async () => {
+copyPhoneButton?.addEventListener("click", async () => {
   try {
-    await navigator.clipboard.writeText(bookingEmail);
+    await navigator.clipboard.writeText(bookingPhone);
     if (copyStatus) {
-      copyStatus.textContent = "Email copied.";
+      copyStatus.textContent = "Phone number copied.";
     }
   } catch {
     if (copyStatus) {
-      copyStatus.textContent = bookingEmail;
+      copyStatus.textContent = bookingPhone;
     }
   }
 });
@@ -110,7 +103,9 @@ bookingForm?.addEventListener("submit", (event) => {
   event.preventDefault();
   const status = bookingForm.querySelector(".form-status");
   const formData = new FormData(bookingForm);
-  const body = [
+  const message = [
+    "Hello E & J Nails, I'd like to book an appointment.",
+    "",
     `Name: ${formData.get("name")}`,
     `Phone: ${formData.get("phone")}`,
     `Service: ${formData.get("service")}`,
@@ -118,8 +113,8 @@ bookingForm?.addEventListener("submit", (event) => {
     `Message: ${formData.get("message") || ""}`,
   ].join("\n");
 
-  openBookingModal(createGmailUrl(body));
-  status.textContent = "Tap Open Gmail in the popup to send your booking request.";
+  openBookingModal(createWhatsAppUrl(message));
+  status.textContent = "Tap Open WhatsApp in the popup to send your booking request.";
   bookingForm.reset();
 });
 

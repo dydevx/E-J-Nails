@@ -853,7 +853,7 @@ textarea {
   cursor: pointer;
 }
 
-.booking-modal__gmail,
+.booking-modal__whatsapp,
 .booking-modal__copy {
   width: 100%;
   min-height: 50px;
@@ -869,7 +869,7 @@ textarea {
   cursor: pointer;
 }
 
-.booking-modal__email {
+.booking-modal__phone {
   overflow-wrap: anywhere;
   padding: 13px 14px;
   border-radius: 14px;
